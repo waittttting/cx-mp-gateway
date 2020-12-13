@@ -1,0 +1,4 @@
+[client]
+    serverName = "gateway"
+    serverVersion = "v0.0.1"
+    configCenterHost = "http://localhost:8000"
