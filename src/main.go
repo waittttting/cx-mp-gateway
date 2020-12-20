@@ -4,8 +4,8 @@ import (
 	"flag"
 	"github.com/BurntSushi/toml"
 	"github.com/sirupsen/logrus"
-	"github.com/waittttting/cx-rpc/client"
-	"github.com/waittttting/cx-rpc/client/conf"
+	"github.com/waittttting/cRPC-client/client"
+	"github.com/waittttting/cRPC-client/conf"
 )
 
 func main() {
