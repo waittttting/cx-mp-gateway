@@ -19,4 +19,5 @@ func main() {
 	}
 	rc := client.NewRpcClient(&config)
 	rc.Start()
+	select {}
 }
