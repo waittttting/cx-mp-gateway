@@ -1,6 +1,9 @@
 package main
 
 import (
+
+	"cx-mp-gateway/crisk"
+	"cx-mp-gateway/cweb"
 	"flag"
 	"github.com/BurntSushi/toml"
 	"github.com/sirupsen/logrus"
@@ -17,7 +20,12 @@ func main() {
 	if _, err := toml.DecodeFile(configPath, &config); err != nil {
 		logrus.Fatal(err)
 	}
+	// cRPC client
 	rc := client.NewRpcClient(&config)
 	rc.Start()
-	select {}
+	// 风控启动
+	crisk.GRS.Start()
+	// web
+	ws := cweb.NewWebServer()
+	ws.Start(config)
 }
